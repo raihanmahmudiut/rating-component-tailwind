@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import RatingField from "./rating";
+import { FaStar, FaHeart } from "react-icons/fa";
 
 function App() {
 	const [currentRating, setCurrentRating] = useState(0);
@@ -15,7 +16,19 @@ function App() {
 			<div className="w-96">
 				<div className="flex items-center mb-4">
 					<p className="mr-4 text-lg font-semibold">Ratings</p>
-					<RatingField currentRating={currentRating} color="yellow-400" />
+
+					<div className="flex flex-col gap-3 ">
+						<RatingField
+							currentRating={currentRating}
+							className="text-yellow-400 w-5 h-5"
+							icon={<FaStar />}
+						/>
+						<RatingField
+							currentRating={currentRating}
+							className="text-red-400 w-5 h-5"
+							icon={<FaHeart />}
+						/>
+					</div>
 				</div>
 				<div className="mt-4">
 					<label className="block mb-2" htmlFor="ratingInput">

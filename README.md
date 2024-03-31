@@ -27,7 +27,7 @@ To use this component in your React project, follow these steps:
 
 Copy the RatingField.js file into your project.
 
-Import the RatingField component into your project and use it as needed.
+Import the RatingField component into your project and use it as needed. Add your own classNames from tailwind to style your icons.
 
 ## Usage
 
@@ -39,7 +39,16 @@ function MyComponent() {
 	return (
 		<div>
 			<h1>My Component</h1>
-			<RatingField currentRating={4.5} color="yellow.400" />
+			<RatingField
+				currentRating={currentRating}
+				className="text-yellow-400 w-5 h-5"
+				icon={<FaStar />}
+			/>
+			<RatingField
+				currentRating={currentRating}
+				className="text-red-400 w-5 h-5"
+				icon={<FaHeart />}
+			/>
 		</div>
 	);
 }
@@ -49,5 +58,6 @@ export default MyComponent;
 
 ## Props
 
-currentRating: The current rating to display.
-color: The color of the stars.
+- `currentRating`: The current rating to display.
+- `className`: Custom CSS classes to apply to the rating field.
+- `icon`: The icon component to use for rendering stars.
